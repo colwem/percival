@@ -33,6 +33,10 @@ task :start do
       c.nick = 'percival'
       c.plugins.plugins = [ClockPlugin, LoggerPlugin]
     end
+    
+    on :message, "hello" do |m|
+      m.reply "Hello, #{m.user.nick}"
+    end
   end
 
   bot.start
